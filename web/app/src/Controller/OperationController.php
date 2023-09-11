@@ -32,7 +32,6 @@ class OperationController
     {
         foreach ($this->requiredFields as $key) {
             if (!array_key_exists($key, $_POST)) {
-                echo $key;
                 return false;
             }
         }
