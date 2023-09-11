@@ -19,7 +19,6 @@ class OperationController
 
     public function addOperation(): string
     {
-        var_dump($_POST);
         if (!$this->validateRequest()) {
             http_response_code(400);
             return 'Invalid request Body';
