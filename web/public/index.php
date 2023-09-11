@@ -1,15 +1,10 @@
 <?php
 
-include '../app/vendor/autoload.php';
-$foo = new App\Acme\Foo();
+require_once __DIR__ . '/../app/vendor/autoload.php';
 
-?><!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Docker <?php echo $foo->getName(); ?></title>
-    </head>
-    <body>
-        <h1>Docker <?php echo $foo->getName(); ?></h1>
-    </body>
-</html>
+$env = new Symfony\Component\Dotenv\Dotenv();
+$env->load(__DIR__ . '/../.env');
+
+require_once __DIR__ . '/../app/src/bootstrap.php';
+require_once __DIR__ . '/../app/src/routes.php';
+
